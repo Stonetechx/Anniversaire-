@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0e68c;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background-color: #ffcccb;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .balloon {
+            font-size: 50px;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            display: inline-block;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #e63946;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c42835;
+        }
+
+        .poem {
+            margin-top: 20px;
+            font-style: italic;
+            color: #333;
+            display: none; /* Caché par défaut */
+        }
+
+        .signature {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="balloon">🎈</div>
+        <h1>Joyeux Anniversaire, Siré !</h1>
+        <p>Que ta journée soit remplie de joie et de bonheur !</p>
+        <button class="button" onclick="changeMessage()">Clique pour une surprise</button>
+        <div class="poem" id="poem">
+            <p>Dans ce jour de fête et de joie,</p>
+            <p>Que chaque instant soit rempli de magie,</p>
+            <p>Que le bonheur soit ton seul guide,</p>
+            <p>Et que l'amour illumine ta vie.</p>
+            <div class="signature">— Docteur STONE</div>
+        </div>
+    </div>
+
+    <script>
+        function changeMessage() {
+            document.querySelector('h1').innerText = "Un Poème pour Toi 🎉";
+            document.querySelector('p').innerText = "Voici quelques mots pour égayer ta journée.";
+            document.getElementById('poem').style.display = 'block'; // Affiche le poème
+        }
+    </script>
+</body>
+</html>
